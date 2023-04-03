@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        .div-table-header {
+            text-align: center;
+            width: 80%;
+            padding: 8px;
+            line-height: 1.42857;
+            vertical-align: top;
+            background-color: #e4e4e48c;
+            color: #36d4d4";
+
+        }
+
+        .font-color {
+            color: #36d4d4;
+        }
+    </style>
+    <title>
+        <%= title%>
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="styleshhet" href="stylesheets/style.css">
+
+</head>
+
+
+<body>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body" style="margin-left: 100px;">
+                <table class="table table-bordered text-center">
+
+
+                    <!-- Show restaurant's comments -->
+                    <div>
+                        <h2>Show Example Reviews of a Restaurant</h2>
+                        <form action="showcomment" method="POST">
+                            <div class="form-group">
+                                <label for="my">RestaurantID</label>
+                                <input type="text" class="form-control col-lg-9" id="comment_restid"
+                                    aria-describedby="emailHelp" placeholder="Enter the RestaurantID"
+                                    name="comment_restid">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+
+            
+                    <div>
+                        <h2> Add New Comment</h2>
+                        <p> Your user id will be your review id </p>
+                        <form action="addcomment" method="POST">
+                            <div class="form-group">
+                                <label for="RestaurantID">RestaurantID</label>
+                                <input type="text" class="form-control col-lg-9" id="RestaurantID" aria-describedby="emailHelp"
+                                    placeholder="Enter the RestaurantID like 278" name="RestaurantID">
+                                <label for="rating">Rating</label>
+                                <input type="text" class="form-control col-lg-9" id="Rating" aria-describedby="emailHelp"
+                                    placeholder="Enter the Rating from 1 to 5" name="Rating">
+                                <label for="comment">Comment</label>
+                                <input type="text" class="form-control col-lg-9" id="comment" aria-describedby="emailHelp"
+                                    placeholder="Enter the comment " name="comment">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+                    <div class="div-table-header">
+                        <strong>
+                            <h1 class="font-color">Review of Restaurant
+                            </h1>
+                        </strong>
+                    </div>
+                    <div>
+                        <table class="table table-bordered table-hover" style="width:80%;text-align:center;">
+                            <tr>
+                                <td> RestaurantID </td>
+                                <td> Restaurant Name </td>
+                                <td> Average Rating </td> 
+                                <td> Total number of rating</td>
+                            </tr>
+                            <tr>
+                                <td> <%= data[0].RestaurantID%> </td>
+                                <td> <%=data[0].RestaurantName%> </td>
+                                <td> <%=data[0].AverageRating%></td>
+                                <td> <%=data[0].RatingNum%> </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <table class="table table-bordered table-hover" style="width:80%;text-align:center;margin-left:80px">
+                        <tr>
+                            <td> Review ID</td>
+                            <td> Reviewer</td>
+                            <td> Rating</td>
+                            <td> Comment</td>
+                            <td> Date </td>
+                        </tr>
+
+                        <% for(var i=0;i < data.length;i++){ %>
+                            <tr>
+                                <td>
+                                    <%= data[i].ReviewID %>
+                                </td>
+                                <td>
+                                    <%= data[i].Name %>
+                                </td>
+                                <td>
+                                    <%= data[i].Rating %>
+                                </td>
+                                <td>
+                                    <%= data[i].Comment %>
+                                </td>
+                                <td>
+                                    <%= data[i].ReviewDate %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+</html>

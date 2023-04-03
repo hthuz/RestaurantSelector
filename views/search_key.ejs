@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<style>
+		.div-table-header {
+			text-align: center;
+			width: 80%;
+			padding: 8px;
+			line-height: 1.42857;
+			vertical-align: top;
+			background-color: #e4e4e48c;
+			color: #36d4d4";
+		}
+
+		.font-color {
+			color: #36d4d4;
+		}
+	</style>
+	<title>
+		<%= title%>
+	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="styleshhet" href="stylesheets/style.css">
+
+</head>
+
+
+<body>
+	<div class="container mt-4">
+		<div class="card">
+			<div class="card-body" style="margin-left: 180px;">
+				<table class="table table-bordered text-center">
+					<div>
+                        <h2>General Keyword Search</h2>
+                        <form action="searchkeyword" method="POST">
+                            <div class="form-group">
+                                <label for="keyword">keyword</label>
+                                <input type="text" class="form-control col-lg-9" id="keyword"
+                                    aria-describedby="emailHelp" placeholder="Enter key word like 'burger', 'McDonald's"
+                                    name="keyword">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+
+					<div>
+                        <h2>Search Restaurant</h2>
+                        <form action="search-restaurant" method="POST">
+                            <div class="form-group">
+                                <label for="restaurant_input">Restaurant</label>
+                                <input type="text" class="form-control col-lg-9" id="restaurant_input"
+                                    aria-describedby="emailHelp"
+                                    placeholder="Restaurant Name, empty to display all restaurants"
+                                    name="restaurant_input">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Search</button>
+                        </form>
+                    </div>
+
+					<div>
+						<h2>Compare two restaurants</h2>
+						<form action="comparison" method="POST">
+						  <div class="form-group">
+							<label for="rest1">Restaurant 1</label>
+							<input type="text" class="form-control col-lg-9" id="rest1" aria-describedby="emailHelp"
+							  placeholder="ID of Restaurant 1" name="rest1">
+							<label for="rest2">Restaurant 2</label>
+							<input type="text" class="form-control col-lg-9" id="rest2" aria-describedby="emailHelp"
+							placeholder="ID of Restaurant 2" name="rest2">
+						  </div>
+						  <button type="submit" class="btn btn-primary">Compare</button>
+						</form>
+					</div>
+					
+					<div class="div-table-header">
+						<strong>
+							<h1 class="font-color">Keyword Search "<%= keyword%>"</h1>
+						</strong>
+					</div>
+
+					<table class="table table-bordered table-hover" style="width:80%;text-align:center;">
+						<tr>
+							<td> Restaurant ID</td>
+							<td> Restaurant Name</td>
+							<td> Food Name</td>
+							<td> Price</td>
+						</tr>
+
+						<% for(var i = 0;i < data.length;i++){ %>
+							<tr>
+								<td> <%= data[i].RestaurantId %> </td>
+								<td> <%= data[i].RestaurantName %> </td>
+								<td> <%= data[i].FoodName %> </td>
+								<td> <%= data[i].Price %></td>
+							</tr>
+							<% } %>
+					</table>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+
+
+
+</html>

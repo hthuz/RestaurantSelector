@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<style>
+		.div-table-header {
+			text-align: center;
+			width: 80%;
+			padding: 8px;
+			line-height: 1.42857;
+			vertical-align: top;
+			background-color: #e4e4e48c;
+			color: #36d4d4";
+		}
+
+		.font-color {
+			color: #36d4d4;
+		}
+	</style>
+	<title>
+		<%= title%>
+	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="styleshhet" href="stylesheets/style.css">
+
+</head>
+
+
+<body>
+	<div class="container mt-4">
+		<div class="card">
+			<div class="card-body" style="margin-left: 180px;">
+
+				<h2>Find best rated dish based on zipcode</h2>
+				<form action="findbestfoodzip" method="POST">
+				  <div class="form-group">
+					<label for="zipcodeToFind">Zipcode</label>
+					<input type="text" class="form-control col-lg-9" id="zipcodeToFind" aria-describedby="emailHelp"
+					  placeholder="Select a Zipcode" name="zipcodeToFind">
+				  </div>
+				  <button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+				
+				<table class="table table-bordered text-center">
+					<div class="div-table-header">
+						<strong>
+							<h1 class="font-color">Zipcode Search "<%= keyword%>"</h1>
+						</strong>
+					</div>
+
+					<table class="table table-bordered table-hover" style="width:80%;text-align:center;">
+						<tr>
+							<td> Food Name</td>
+							<td> Average Rating</td>
+						</tr>
+
+						<% for(var i=0;i < data.length;i++){ %>
+							<tr>
+								<td>
+									<%= data[i].FoodName %>
+								</td>
+								<td>
+									<%= data[i].AVGRating %>
+								</td>
+							</tr>
+							<% } %>
+					</table>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+
+
+
+</html>

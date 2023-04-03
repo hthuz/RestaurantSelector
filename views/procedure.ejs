@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <style>
+        .div-table-header {
+            text-align: center;
+            width: 80%;
+            padding: 8px;
+            line-height: 1.42857;
+            vertical-align: top;
+            background-color: #e4e4e48c;
+            margin-left: 100px;
+            color: #36d4d4";
+
+
+        }
+
+        .font-color {
+            color: #36d4d4;
+        }
+    </style>
+    <title>
+        <%= title%>
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="styleshhet" href="stylesheets/style.css">
+
+</head>
+
+
+<body>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-bordered text-center">
+
+                    <div class="div-table-header">
+                        <strong>
+                            <h1 class="font-color">Stored procedure Search <%= dayofweek%> <%= timeofday%></h1>
+                        </strong>
+                    </div>
+                    <p>Combined Rating: average of review rating and restaurantrating</p>
+                    <p>Restaurant Rating: average rating of all reviews </p>
+                    <p>Review Rating: average rating of chosen reviews </p>
+
+                    <table class="table table-bordered table-hover" style="width:80%;text-align:center;margin-left:100px;">
+                        <tr>
+                            <td> Restaurant ID</td>
+                            <td> Restaurant Name</td>
+                            <td> Restaurant Status</td>
+                            <td> CombinedRating</td>
+                            <td> RestaurantRating</td>
+                            <td> ReviewRating</td>
+                        </tr>
+
+                        <% for(var i=0;i < data.length;i++){ %>
+                            <tr>
+                                <td>
+                                    <%= data[i].RestaurantID %>
+                                </td>
+                                <td>
+                                    <%= data[i].RestaurantName %>
+                                </td>
+                                <td>
+                                    <%= data[i].RestaurantStatus %>
+                                </td>
+                                <td>
+                                    <%= data[i].CombinedRating %>
+                                </td>
+                                <td>
+                                    <%= data[i].RestaurantRating %>
+                                </td>
+                                <td>
+                                    <%= data[i].ReviewRating %>
+                                </td>
+                            </tr>
+                            <% } %>
+                    </table>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<style>
+		.div-table-header {
+			text-align: center;
+			width: 80%;
+			padding: 8px;
+			line-height: 1.42857;
+			vertical-align: top;
+			background-color: #e4e4e48c;
+			color: #36d4d4";
+
+		}
+
+		.font-color {
+			color: #36d4d4;
+		}
+	</style>
+	<title>
+		<%= title%>
+	</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="styleshhet" href="stylesheets/style.css">
+
+</head>
+
+
+<body>
+	<div class="container mt-4">
+		<div class="card">
+			<div class="card-body" style="margin-left: 180px;">
+				<table class="table table-bordered text-center">
+					<h2>Search with time</h2>
+					<p>Finds restaurant that provides food with your choice of keyword and opens after your choice of
+						open time</p>
+					<form action="searchwithtime" method="POST">
+						<div class="form-group">
+							<label for="keyword">Keyword</label>
+							<input type="text" class="form-control col-lg-9" id="keyword" aria-describedby="emailHelp"
+								placeholder="enter key word like 'burger'" name="keyword">
+							<label for="time">Time</label>
+							<input type="text" class="form-control col-lg-9" id="time" aria-describedby="emailHelp"
+								placeholder="Enter your time like '22', which means 10pm" name="time">
+							<label for="day">Day</label>
+							<input type="text" class="form-control col-lg-9" id="day" aria-describedby="emailHelp"
+								placeholder="Enter your day,like 'Monday', remeber 'M' rather than 'm'" name="day">
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
+
+					<div class="div-table-header">
+						<strong>
+							<h1 class="font-color">
+								Keyword Search"<%= word%>", Day Search "<%=day%>", Time Search "<%=time%>"
+							</h1>
+						</strong>
+					</div>
+
+					<table class="table table-bordered table-hover" style="width:80%;text-align:center;">
+						<tr>
+							<td> Restaurant Name</td>
+							<td> Cuisine</td>
+							<td> Food Name</td>
+							<td> Open Time</td>
+						</tr>
+
+						<% for(var i=0;i < data.length;i++){ %>
+							<tr>
+								<td>
+									<%= data[i].RestaurantName %>
+								</td>
+								<td>
+									<%= data[i].Cuisine %>
+								</td>
+								<td>
+									<%= data[i].FoodName %>
+								</td>
+								<td>
+									<%= data[i].OpenTime %>
+								</td>
+							</tr>
+							<% } %>
+					</table>
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Restaurant System Login</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- User Login -->
+    <div class="container mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h2>Welcome to Robust Restaurant System!</h2>
+            <p>Login in your account to continue</p>
+            <p>As a user, you can do queries, show your favourite restaurants, write comments</p>
+            <h3>User Login</h3>
+            <form action="restaurant-user-system" method="POST">
+              <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control col-lg-9" id="username" aria-describedby="emailHelp"
+                name="username">
+                <label for="password">Password</label>
+                <input type="text" class="form-control col-lg-9" id="password" aria-describedby="emailHelp"
+                name="password">
+                    
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Admin login -->
+      <div class="container mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h3>Administrator Login</h3>
+            <p> As an administrator, you can do moficications on restaurants </p>
+            <form action="restaurant-admin-system" method="POST">
+              <div class="form-group">
+                <label for="username">Administrator name</label>
+                <input type="text" class="form-control col-lg-9" id="username" aria-describedby="emailHelp"
+                name="username">
+                <label for="password">Password</label>
+                <input type="text" class="form-control col-lg-9" id="password" aria-describedby="emailHelp"
+                name="password">
+                    
+              </div>
+              <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trial -->
+      <div class="container mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h3>Or you can start trial without login</h3>
+            <p> You can only do some queries and can't write comments </p>
+            <form action="restaurant-trial-system" method="POST">
+              <button type="submit" class="btn btn-primary">Start Trial</button>
+            </form>
+          </div>
+        </div>
+      </div>
+</body>
+
+</html>

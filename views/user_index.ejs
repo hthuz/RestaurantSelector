@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Restaurant System</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h1 style="text-align:center">
+        Robust Restaurant Selection System
+    </h1>
+    <p style="text-align:center;">
+        Welcome to Robust Restaurant System, We collect information of more than 1000 restaurants with more than 80,000
+        food in Chicago. We also collect information about
+        address, reviews, open time information of these restaurants. You can do some query to find restaurants or food
+        you want to eat. Enjoy your journey!
+    </p>
+
+    <h2 style="text-align:center">Basic Query</h2>
+
+
+    <!-- Search using keyword -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>General Keyword Search</h2>
+                <form action="searchkeyword" method="POST">
+                    <div class="form-group">
+                        <label for="keyword">keyword</label>
+                        <input type="text" class="form-control col-lg-9" id="keyword" aria-describedby="emailHelp"
+                            placeholder="Enter key word like 'burger', 'McDonald's" name="keyword">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Search Restaurant -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>Search Restaurant</h2>
+                <form action="search-restaurant" method="POST">
+                    <div class="form-group">
+                        <label for="restaurant_input">Restaurant</label>
+                        <input type="text" class="form-control col-lg-9" id="restaurant_input"
+                            aria-describedby="emailHelp" placeholder="Restaurant Name, Empty to display all restaurants"
+                            name="restaurant_input">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Show favourite restaurant list -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>Show My Favourite</h2>
+                <form action="show-favourite" method="POST">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Show restaurant's comments -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>Show Example Reviews of a Restaurant</h2>
+                <form action="showcomment" method="POST">
+                    <div class="form-group">
+                        <label for="my">RestaurantID</label>
+                        <input type="text" class="form-control col-lg-9" id="comment_restid"
+                            aria-describedby="emailHelp" placeholder="Enter the RestaurantID" name="comment_restid">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--  add a comment -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>Add New Comment</h2>
+                <p> If you add two or more comments to the same restaurant, your comment is recorded. But it won't account for part of 
+                    rating of this restaurant.
+                </p>
+                <form action="addcomment" method="POST">
+                    <div class="form-group">
+                        <label for="RestaurantID">RestaurantID</label>
+                        <input type="text" class="form-control col-lg-9" id="RestaurantID" aria-describedby="emailHelp"
+                            placeholder="Enter the RestaurantID like 278" name="RestaurantID">
+                        <label for="rating">Rating</label>
+                        <input type="text" class="form-control col-lg-9" id="Rating" aria-describedby="emailHelp"
+                            placeholder="Enter the Rating from 1 to 5" name="Rating">
+                        <label for="comment">Comment</label>
+                        <input type="text" class="form-control col-lg-9" id="comment" aria-describedby="emailHelp"
+                            placeholder="Enter the comment " name="comment">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <h2 style="text-align:center">Advanced Query</h2>
+    <!-- Search with Zipcode -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>Find best rated dish based on zipcode</h2>
+                <form action="findbestfoodzip" method="POST">
+                    <div class="form-group">
+                        <label for="zipcodeToFind">Zipcode</label>
+                        <input type="text" class="form-control col-lg-9" id="zipcodeToFind" aria-describedby="emailHelp"
+                            placeholder="Select a Zipcode" name="zipcodeToFind">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search with time -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>Search with time</h2>
+                <p>Finds restaurant that provides food with your choice of keyword and
+                    opens after your choice of open time</p>
+                <form action="searchwithtime" method="POST">
+                    <div class="form-group">
+                        <label for="keyword">Keyword</label>
+                        <input type="text" class="form-control col-lg-9" id="keyword" aria-describedby="emailHelp"
+                            placeholder="enter key word like 'burger'" name="keyword">
+                        <label for="time">Time</label>
+                        <input type="text" class="form-control col-lg-9" id="time" aria-describedby="emailHelp"
+                            placeholder="Enter your time like '22', which means 10pm" name="time">
+                        <label for="day">Day</label>
+                        <input type="text" class="form-control col-lg-9" id="day" aria-describedby="emailHelp"
+                            placeholder="Enter your day,like 'Monday', remeber 'M' rather than 'm'" name="day">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <div class="card">
+          <div class="card-body">
+            <h2>Test The Stored Procedure</h2>
+            <p> Enter your chosen time, this stored procedure will return all
+                restaurants that are open now along with their rating and status in your favourite list
+            </p>
+            <form action="storedproctest" method="POST">
+              <div class="form-group">
+                <label for="dayofweek">Day of Week</label>
+                <input type="text" class="form-control col-lg-9" id="dayofweek" aria-describedby="emailHelp"
+                  placeholder="Enter day of week like 'Monday'" name="dayofweek">
+                <label for="timeofday">Time of Day</label>
+                <input type="text" class="form-control col-lg-9" id="timeofday" aria-describedby="emailHelp"
+                  placeholder="Enter time like 10" name="timeofday">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    <!-- Comparison -->
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-body">
+                <h2>Compare two restaurants</h2>
+                <p> Compare two restaurants in a more direct way to help you decide!</p>
+                <form action="comparison" method="POST">
+                    <div class="form-group">
+                        <label for="rest1">Restaurant 1</label>
+                        <input type="text" class="form-control col-lg-9" id="rest1" aria-describedby="emailHelp"
+                            placeholder="ID of Restaurant 1" name="rest1">
+                        <label for="rest2">Restaurant 2</label>
+                        <input type="text" class="form-control col-lg-9" id="rest2" aria-describedby="emailHelp"
+                            placeholder="ID of Restaurant 2" name="rest2">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Compare</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Restaurant System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <!-- Add Restautant -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Add new restaurant</h2>
+        <form action="addrest" method="POST">
+          <div class="form-group">
+            <label for="RestaurantName">Restaurant name</label>
+            <input type="text" class="form-control col-lg-9" id="RestaurantName" aria-describedby="emailHelp"
+              placeholder="Enter Restaurant Name" name="RestaurantName">
+            <label for="PhoneNumber">Phone Number</label>
+            <input type="text" class="form-control col-lg-9" id="PhoneNumber" aria-describedby="emailHelp"
+              placeholder="Enter restaurant phone number - (###) ###-####" name="PhoneNumber">
+            <label for="PriceLevel">Price Level</label>
+            <input type="text" class="form-control col-lg-9" id="PriceLevel" aria-describedby="emailHelp"
+              placeholder="Enter Price Level - (1-4, 4 being most expensive)" name="PriceLevel">
+            <label for="AverageRating">Average Rating</label>
+            <input type="text" class="form-control col-lg-9" id="AverageRating" aria-describedby="emailHelp"
+              placeholder="Enter Average Rating - (1.0 - 5.0)" name="AverageRating">
+            <label for="Cuisine">Cuisine</label>
+            <input type="text" class="form-control col-lg-9" id="Cuisine" aria-describedby="emailHelp"
+              placeholder="Enter type of cuisine" name="Cuisine">
+            <label for="Delivery">Delivery</label>
+            <input type="text" class="form-control col-lg-9" id="Delivery" aria-describedby="emailHelp"
+              placeholder="Enter delivery status - (0 = No, 1 = Yes)" name="Delivery">
+            <label for="Dine_In">Dine-In</label>
+            <input type="text" class="form-control col-lg-9" id="Dine_In" aria-describedby="emailHelp"
+              placeholder="Enter dine-in status - (0 = No, 1 = Yes)" name="Dine_In">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Restaurant -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Delete restaurant</h2>
+        <form action="delrest" method="POST">
+          <div class="form-group">
+            <label for="RestaurantName">Restaurant name</label>
+            <input type="text" class="form-control col-lg-9" id="RestaurantName" aria-describedby="emailHelp"
+              placeholder="Enter Restaurant Name" name="RestaurantName">
+            <label for="RestaurantID">Restaurant id</label>
+            <input type="text" class="form-control col-lg-9" id="RestaurantID" aria-describedby="emailHelp"
+              placeholder="###" name="RestaurantID">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Update Restaurant -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Update restaurant</h2>
+        <form action="updrest" method="POST">
+          <div class="form-group">
+            <label for="idToUpdate">Restaurant id</label>
+            <input type="text" class="form-control col-lg-9" id="idToUpdate" aria-describedby="emailHelp"
+              placeholder="restaurant id you wish to update" name="idToUpdate">
+            <label for="restNameToUpdate">Restaurant name</label>
+            <input type="text" class="form-control col-lg-9" id="restNameToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New Restaurant Name" name="restNameToUpdate">
+            <label for="phoneNumToUpdate">Phone Number</label>
+            <input type="text" class="form-control col-lg-9" id="phoneNumToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New restaurant phone number - (###) ###-####" name="phoneNumToUpdate">
+            <label for="priceLevelToUpdate">Price Level</label>
+            <input type="text" class="form-control col-lg-9" id="priceLevelToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New Price Level - (1-4, 4 being most expensive)" name="priceLevelToUpdate">
+            <label for="avgRatingToUpdate">Average Rating</label>
+            <input type="text" class="form-control col-lg-9" id="avgRatingToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New Average Rating - (1.0 - 5.0)" name="avgRatingToUpdate">
+            <label for="cuisineToUpdate">Cuisine</label>
+            <input type="text" class="form-control col-lg-9" id="cuisineToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New type of cuisine" name="cuisineToUpdate">
+            <label for="deliveryUpdate">Delivery</label>
+            <input type="text" class="form-control col-lg-9" id="deliveryUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New delivery status - (0 = No, 1 = Yes)" name="deliveryUpdate">
+            <label for="dineInUpdate">Dine-In</label>
+            <input type="text" class="form-control col-lg-9" id="dineInUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New Dine-In status - (0 = No, 1 = Yes)" name="dineInUpdate">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search with Zipcode -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Find best rated dish based on zipcode</h2>
+        <form action="findbestfoodzip" method="POST">
+          <div class="form-group">
+            <label for="zipcodeToFind">Zipcode</label>
+            <input type="text" class="form-control col-lg-9" id="zipcodeToFind" aria-describedby="emailHelp"
+              placeholder="Select a Zipcode" name="zipcodeToFind">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search with time -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Search with time</h2>
+        <p>Finds restaurant that provides food with your choice of keyword and opens after your choice of open time</p>
+        <form action="searchwithtime" method="POST">
+          <div class="form-group">
+            <label for="keyword">Keyword</label>
+            <input type="text" class="form-control col-lg-9" id="keyword" aria-describedby="emailHelp"
+              placeholder="enter key word like 'burger'" name="keyword">
+            <label for="time">Time</label>
+            <input type="text" class="form-control col-lg-9" id="time" aria-describedby="emailHelp"
+              placeholder="Enter your time like '22', which means 10pm" name="time">
+            <label for="day">Day</label>
+            <input type="text" class="form-control col-lg-9" id="day" aria-describedby="emailHelp"
+              placeholder="Enter your day,like 'Monday', remeber 'M' rather than 'm'" name="day">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search using keyword -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Search using keyword</h2>
+        <form action="searchkeyword" method="POST">
+          <div class="form-group">
+            <label for="keyword">keyword</label>
+            <input type="text" class="form-control col-lg-9" id="keyword" aria-describedby="emailHelp"
+              placeholder="Enter key word like 'burger'" name="keyword">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

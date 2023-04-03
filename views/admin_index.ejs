@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Restaurant System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+  <h1 style="text-align:center">
+    Robust Restaurant Management System
+  </h1>
+  <p style="text-align:center;">
+    This is administrator system for Robust Restaurant System, you can do modifications on restaurants information.
+    More functions are to be developed.
+  </p>
+
+
+
+  <!-- Search Restaurant -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Search Restaurant</h2>
+        <form action="admin-search-restaurant" method="POST">
+          <div class="form-group">
+            <label for="restaurant_input">Restaurant</label>
+            <input type="text" class="form-control col-lg-9" id="restaurant_input" aria-describedby="emailHelp"
+              placeholder="Restaurant Name, empty to display all restaurants" name="restaurant_input">
+          </div>
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Add Restautant -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Add new restaurant</h2>
+        <form action="addrest" method="POST">
+          <div class="form-group4">
+            <label for="RestaurantName">Restaurant name</label>
+            <input type="text" class="form-control col-lg-9" id="RestaurantName" aria-describedby="emailHelp"
+              placeholder="Enter Restaurant Name" name="RestaurantName">
+            <label for="PhoneNumber">Phone Number</label>
+            <input type="text" class="form-control col-lg-9" id="PhoneNumber" aria-describedby="emailHelp"
+              placeholder="Enter restaurant phone number - (###) ###-####" name="PhoneNumber">
+            <label for="PriceLevel">Price Level</label>
+            <input type="text" class="form-control col-lg-9" id="PriceLevel" aria-describedby="emailHelp"
+              placeholder="Enter Price Level - (1-4, 4 being most expensive)" name="PriceLevel">
+            <label for="AverageRating">Average Rating</label>
+            <input type="text" class="form-control col-lg-9" id="AverageRating" aria-describedby="emailHelp"
+              placeholder="Enter Average Rating - (1.0 - 5.0)" name="AverageRating">
+            <label for="RatingNum">Number of reviews</label>
+            <input type="text" class="form-control col-lg-9" id="RatingNum" aria-describedby="emailHelp"
+              placeholder="Enter Number of reviews" name="RatingNum">
+            <label for="Cuisine">Cuisine</label>
+            <input type="text" class="form-control col-lg-9" id="Cuisine" aria-describedby="emailHelp"
+              placeholder="Enter type of cuisine" name="Cuisine">
+            <label for="Delivery">Delivery</label>
+            <input type="text" class="form-control col-lg-9" id="Delivery" aria-describedby="emailHelp"
+              placeholder="Enter delivery status - (0 = No, 1 = Yes)" name="Delivery">
+            <label for="Dine_In">Dine-In</label>
+            <input type="text" class="form-control col-lg-9" id="Dine_In" aria-describedby="emailHelp"
+              placeholder="Enter dine-in status - (0 = No, 1 = Yes)" name="Dine_In">
+            <label for="location">Location</label>
+            <input type="text" class="form-control col-lg-9" id="location" aria-describedby="emailHelp"
+              placeholder="Enter address" name="location">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Delete Restaurant -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Delete restaurant</h2>
+        <form action="delrest" method="POST">
+          <div class="form-group">
+            <label for="RestaurantName">Restaurant name</label>
+            <input type="text" class="form-control col-lg-9" id="RestaurantName" aria-describedby="emailHelp"
+              placeholder="Enter Restaurant Name" name="RestaurantName">
+            <label for="RestaurantID">Restaurant id</label>
+            <input type="text" class="form-control col-lg-9" id="RestaurantID" aria-describedby="emailHelp"
+              placeholder="###" name="RestaurantID">
+            <label for="dellocationID">Location id</label>
+            <input type="text" class="form-control col-lg-9" id="dellocationID" aria-describedby="emailHelp"
+              placeholder="###" name="dellocationID">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Update Restaurant -->
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-body">
+        <h2>Update restaurant</h2>
+        <form action="updrest" method="POST">
+          <div class="form-group">
+            <label for="idToUpdate">Restaurant id</label>
+            <input type="text" class="form-control col-lg-9" id="idToUpdate" aria-describedby="emailHelp"
+              placeholder="restaurant id you wish to update" name="idToUpdate">
+            <label for="restNameToUpdate">Restaurant name</label>
+            <input type="text" class="form-control col-lg-9" id="restNameToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New Restaurant Name" name="restNameToUpdate">
+            <label for="phoneNumToUpdate">Phone Number</label>
+            <input type="text" class="form-control col-lg-9" id="phoneNumToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New restaurant phone number - (###) ###-####" name="phoneNumToUpdate">
+            <label for="priceLevelToUpdate">Price Level</label>
+            <input type="text" class="form-control col-lg-9" id="priceLevelToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New Price Level - (1-4, 4 being most expensive)" name="priceLevelToUpdate">
+            <label for="avgRatingToUpdate">Average Rating</label>
+            <input type="text" class="form-control col-lg-9" id="avgRatingToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New Average Rating - (1.0 - 5.0)" name="avgRatingToUpdate">
+            <label for="cuisineToUpdate">Cuisine</label>
+            <input type="text" class="form-control col-lg-9" id="cuisineToUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New type of cuisine" name="cuisineToUpdate">
+            <label for="deliveryUpdate">Delivery</label>
+            <input type="text" class="form-control col-lg-9" id="deliveryUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New delivery status - (0 = No, 1 = Yes)" name="deliveryUpdate">
+            <label for="dineInUpdate">Dine-In</label>
+            <input type="text" class="form-control col-lg-9" id="dineInUpdate" aria-describedby="emailHelp"
+              placeholder="Enter New Dine-In status - (0 = No, 1 = Yes)" name="dineInUpdate">
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>
